@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1" />
+		<title>carouFredSel: a circular, responsive jQuery carousel</title>
+		<script type="text/javascript" language="javascript" src="jquery.js"></script>
+		<script type="text/javascript" language="javascript" src="jquery.carouFredSel-5.6.2.js"></script>
+		<script type="text/javascript" language="javascript" src="jquery.touchSwipe.js"></script>
+		<script type="text/javascript" language="javascript">
+			$(function() {
+				$('#hero-carousel').carouFredSel({
+					responsive: true,
+					width: '100%',
+					scroll: 1,
+					prev: '#prev',
+					next: '#next',
+					pagination: ".pager",
+					items: {
+						height: '56.25%',	//	keeping 16:9 ratio
+					},
+					auto:false
+				});
+			});
+		</script>
+
+		<style type="text/css" media="all">
+			html, body {
+				padding: 0;
+				margin: 0;
+				/* height: 100%; */
+			}
+			.list_carousel {
+				margin: 0;
+				width: 100%;
+				position:relative;
+			}
+			.list_carousel ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				display: block;
+			}
+			.list_carousel li {
+				font-size: 40px;
+				color: #999;
+				text-align: center;
+				background-color: #eee;
+				width:100%;
+				height:100%;
+				padding: 0;
+				margin: 0;
+				display: block;
+				float: left;
+			}
+			.list_carousel li img {
+				width:100%;
+			}
+			.list_carousel a {
+				width:37px;
+				height:20%;
+				background:url('arrows.png') no-repeat;
+				background-position:0 center;
+				position:absolute;
+				top:40%;
+			}
+			#prev {
+				float: left;
+				margin-left: 10px;
+				left:-10px;
+			}
+			#next {
+				float: right;
+				margin-right: 10px;
+				right:-12px;
+				background-position:-37px center;
+			}
+			.pager {
+				position: absolute;
+				width: 300px;
+				text-align: center;
+				bottom:-20px;
+				left:48%;
+			}
+			.pager a {
+				background-image:none;
+				background-color:#CCC;
+				width:10px;
+				height:10px;
+				margin: 0 5px;
+				text-decoration: none;
+				position:static;
+				float:left;
+			}
+			.pager a span {
+				display:none;
+			}
+			.pager a.selected {
+				background-color:#000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="list_carousel">
+			<ul id="hero-carousel">
+				<li><img src = "1.jpeg" /></li>
+				<li><img src = "2.jpeg" /></li>
+				<li><img src = "3.jpeg" /></li>
+			</ul>
+				<a id="prev"  href="#"></a>
+				<a id="next"  href="#"></a>
+				<div class="pager"></div>
+		</div>
+	</body>
+</html>
